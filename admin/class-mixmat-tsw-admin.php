@@ -147,7 +147,12 @@ class Mixmat_Tsw_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-        
+                wp_enqueue_style( $this->plugin_name .'-admin', 
+			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
+			array(), 
+			$this->version, 
+			'all' 
+		);
 		wp_enqueue_style(  'wp-color-picker' );
 
 	}
