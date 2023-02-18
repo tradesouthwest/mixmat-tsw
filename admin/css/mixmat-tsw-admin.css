@@ -1,0 +1,43 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+.html-active div.wp-editor-tabs 
+button#content-html.wp-switch-editor.switch-html {
+    /* background: #fcfcfc; */
+    color: #000;
+    border-bottom-color: paleturquoise; /* skyblue */
+    font-size: larger;
+    font-weight: bolder;
+    border-top: thin solid skyblue;
+    border-left: thin solid transparent;
+    border-right: 1px solid transparent;
+    background: paleturquoise; /* skyblue */
+}
+.html-active .quicktags-toolbar{
+    background: paleturquoise; /* skyblue */
+}
+    .wp-switch-editor {
+        
+       text-shadow: 0 1px 0 white;
+    }
+.mxmt-tsw-mcepopup img{
+    max-width: 100%;
+    height: auto;
+}
+.mxmt-popup-wrap ul li{
+list-style: square inside;
+color: #4d4d4d;
+font-style: italic;
+}
+.mxmt-tsw-mcepopup h3{
+border-bottom: thin solid #ccc;
+width: 100%;
+background: skyblue;
+padding-left:4px;
+text-shadow: 0 1px 0 white;
+}
+details summary {
+cursor:pointer; font-size: larger; font-weight:bold; 
+    color: green;
+} 
