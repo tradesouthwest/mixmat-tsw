@@ -93,81 +93,14 @@ function mixmat_render_mce_popup() {
             <div class="mxmt-popup-wrap">
             <h4><?php esc_html_e('Mixmat PageMixer ','mixmat'); ?> <?php esc_html_e('Follow these steps please','mixmat'); ?></h4>
                 <h3>First</h3>
-                <ul>
-                    <li>Open <strong>Text</strong> tab in editor 
-                    <img src="<?php echo esc_url( $imgurl .'mxmt-admin-activehtml.png' ); ?>" />
-                    </li>
-                </ul>
-                <h3>Next</h3>
-                <ul>
-                <li>Determine layout and <strong>find code</strong> to use inside the Editor.</li>
-                </ul>
-                <details>
-                <summary>View Layout Choices</summary>
-                <table class="widefat" id="mxmtListC">
-                    <thead><tr><th>columns</th><th>cols</th><th>copy (CTRL+C)</th></tr></thead>
-                <tbody><tr><td>[________]</td><td>1</td><td>&lt;div class="mixmat_one"&gt;Text goes here&lt;/div></td></tr>
-                <tr><td>[___][___]</td>
-                <td>2</td><td>&lt;div class="mixmat_one_half"&gt;<?php print($tgh); ?>&lt;/div>
-                    &lt;div class="mixmat_last_one_half"&gt;<?php print($tgh); ?>&lt;/div>
-                </td></tr>
-                <tr><td>[__][__][__]</td>
-                <td>3</td><td>&lt;div class="mixmat_one_third"&gt;<?php print($tgh); ?>&lt;/div>
-                    &lt;div class="mixmat_one_third"&gt;<?php print($tgh); ?>&lt;/div>
-                    &lt;div class="mixmat_last_one_third"&gt;<?php print($tgh); ?>&lt;/div>
-                </td></tr>
-                <tr><td>[_][_][_][_]</td>
-                <td>4</td><td>&lt;div class="mixmat_one_forth"&gt;<?php print($tgh); ?>&lt;/div>
-                    &lt;div class="mixmat_one_forth"&gt;<?php print($tgh); ?>&lt;/div>
-                    &lt;div class="mixmat_one_forth"&gt;<?php print($tgh); ?>&lt;/div>
-                    &lt;div class="mixmat_last_one_forth"&gt;<?php print($tgh); ?>&lt;/div>
-                    </td></tr></tbody>
-                </table>
-</details>
                 <h3>Then</h3>
-                <ul>
-                <li>Paste the code (CTRL+V) into the <strong>Text Editor</strong>
-                    <img src="<?php echo esc_url( $imgurl .'mxmt-admin-activehtml.png' ); ?>" /></li>
-                </ul>
-                <table class="widefat" id="mxmtListD"><tbody>
-                <tr><td>&lt;div class="mixmat_one_half"&gt;Example two columns&lt;/div>
-                    &lt;div class="mixmat_last_one_half"&gt;Last one half column&lt;/div>
-                    </td>
-                </tr></tbody></table>
                 <h3>Last Step</h3>
-                <ul>
-                    <li>Switch to <strong>Visual</strong> Editor tab to add content. Save.
-                    <div class="wp-editor-tabs">
-                        <button type="button" id="" class="wp-switch-editor switch-tmce" 
-                        style="background:#fefefe">Visual</button>
-                        <button type="button" id="" class="wp-switch-editor switch-html" >
-                        Text</button>
-                    </div></li>
-                </ul>
-                <table class="widefat" id="mxmtListD"><tbody><tr><td>
-                Start content here<br>
-                Start content here<br>
-                Start content here... Tip: type directly over these 3 words to keep pagemixer boxes in place.
-                </td></tr></tbody></table>
-
-                <div style="padding:15px;"><!--
-                    <input type="button" class="button-primary" value="Insert Shortcode"
-                    onclick="InsertContainer()" name="submit" />&nbsp;&nbsp;&nbsp; -->
-                    <a class="button" href="#" onclick="tb_remove();
-                            return false;"><?php esc_html_e('Close', 'mixmat'); ?></a>
-                </div>
-                <div class="mxmt-footer">
-                    <h5><?php esc_html_e( 'Examples', 'mixmat' ); ?></h5><!--
-<p style="line-height: 1; margin: 6px 0;">1/2 + last_1/2 = 1 ----- one = 1</p>
-<p style="line-height: 1; margin: 6px 0;">1/3 + last_2/3 = 1 ----- 1/3 + 1/3 + last_1/3 = 1</p>
-<p style="line-height: 1; margin: 6px 0;">1/4 + last_3/4 = 1 ----- 1/4 + 1/4 + 1/4 + last_1/4 = 1</p>
-<p style="line-height: 1; margin: 6px 0;">3/4 + last_1/4 = 1 ----- 1/2 + 1/4 + last_1/4 = 1</p>
-<p><?php esc_html_e( 'Empty row [empty_row][/empty_row] is a spacer with border on top.', 'mixmat' ); ?></p>
-<p><?php esc_html_e( 'As an alternative to copy/paste, you may type in shortcode', 'mixmat' ); ?></p>
--->
-</div>
-
+                
+                <p><?php esc_html_e( 'Empty row .', 'mixmat' ); ?></p>
+                <p><?php esc_html_e( 'Copy/paste .', 'mixmat' ); ?></p>
             </div>
+
+        </div>
 
     </div>
     <?php
