@@ -24,6 +24,30 @@
 add_action( 'init', 'mixmat_tsw_buttons' );
 add_action( 'admin_footer', 'mixmat_render_mce_popup' );
 add_action( 'media_buttons', 'mixmat_render_media_buttons' );
+/*add_filter(
+    'wp_editor',
+    function ($content, $id, $settings) {
+        $settings =   array(
+            'wpautop' => true
+        );
+        return $settings;  
+    }
+);*/
+
+add_filter( 'the_content', 'mixmat_fix_shortcodes', 99 );
+
+if ( !function_exists('mixmat_fix_shortcodes') ) {
+    function mixmat_fix_shortcodes($content){
+        $array = array (
+            '<p>[' => '[',
+            ']</p>' => ']',
+            ']<br />' => ']'
+        );
+        $content = strtr($content, $array);
+        return $content;
+    }
+    add_filter('the_content', 'mixmat_fix_shortcodes');
+}
 
 /**
  * Utility to add MCE Popup button to the Media Buttons section which lies directly
@@ -93,6 +117,11 @@ function mixmat_render_mce_popup() {
             <div class="mxmt-popup-wrap">
             <h4><?php esc_html_e('Mixmat PageMixer ','mixmat'); ?> <?php esc_html_e('Follow these steps please','mixmat'); ?></h4>
                 <h3>First</h3>
+                 <ul>
+                    <li>Select <strong>width</strong>  
+                    <img src="<?php echo esc_url( $imgurl .'mxmt-toolbar.png' ); ?>" />
+                    </li>
+                </ul>
                 <h3>Then</h3>
                 <h3>Last Step</h3>
                 
