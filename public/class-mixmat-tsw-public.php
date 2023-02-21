@@ -74,7 +74,7 @@ class Mixmat_Tsw_Public {
 		wp_enqueue_style( $this->plugin_name .'-public', 
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-public.css', 
 			array(), 
-			time(), 
+			$this->plugin_version, 
 			'all' 
 		);
 
@@ -98,7 +98,7 @@ class Mixmat_Tsw_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		/*
+		/* color picker not used 
 		wp_enqueue_script( $this->plugin_name, 
 			plugin_dir_url( __FILE__ ) . 'js/mixmat-tsw-public.js', 
 			array( 'jquery' ), 

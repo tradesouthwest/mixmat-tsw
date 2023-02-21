@@ -1,7 +1,4 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+/* mixmat-tsw-editor */
 .html-active div.wp-editor-tabs 
 button#content-html.wp-switch-editor.switch-html {
     /* background: #fcfcfc; */
@@ -17,27 +14,27 @@ button#content-html.wp-switch-editor.switch-html {
 .html-active .quicktags-toolbar{
     background: paleturquoise; /* skyblue */
 }
-    .wp-switch-editor {
-        
-       text-shadow: 0 1px 0 white;
-    }
+.wp-switch-editor {
+    
+    text-shadow: 0 1px 0 white;
+}
 .mxmt-tsw-mcepopup img{
     max-width: 100%;
     height: auto;
 }
 .mxmt-popup-wrap ul li{
-list-style: square inside;
-color: #4d4d4d;
-font-style: italic;
+    list-style: square inside;
+    color: #4d4d4d;
+    font-style: italic;
 }
 .mxmt-tsw-mcepopup h3{
-border-bottom: thin solid #ccc;
-width: 100%;
-background: skyblue;
-padding-left:4px;
-text-shadow: 0 1px 0 white;
+    border-bottom: thin solid #ccc;
+    width: 100%;
+    background: skyblue;
+    padding-left:4px;
+    text-shadow: 0 1px 0 white;
 }
 details summary {
 cursor:pointer; font-size: larger; font-weight:bold; 
     color: green;
-} 
+}

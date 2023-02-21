@@ -113,7 +113,7 @@ class Mixmat_Tsw_Admin {
 	 * @since    1.0.1
 	 */
     public function editor_styles() {
-        add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-editor.css' );
+        add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor.css' );
     }
 	/**
 	* Get a plugin options by its key (to be used in other plugin files).
@@ -146,14 +146,18 @@ class Mixmat_Tsw_Admin {
 		 * The Mixmat_Tsw_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
-		 */
-                wp_enqueue_style( $this->plugin_name .'-admin', 
+		 *//*
+        wp_enqueue_style( $this->plugin_name .'-admin', 
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
 			array(), 
-			$this->version, 
-			'all' 
-		);
-		wp_enqueue_style(  'wp-color-picker' );
+			$this->version
+		); */
+        wp_enqueue_style( $this->plugin_name .'-admin', 
+			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
+			array(), 
+			$this->version 
+		); 
+		//wp_enqueue_style(  'wp-color-picker' );
 
 	}
 
@@ -176,13 +180,22 @@ class Mixmat_Tsw_Admin {
 
 		wp_enqueue_script( $this->plugin_name, 
 			plugin_dir_url( __FILE__ ) . 'js/mixmat-tsw-admin.js', 
-			array( 'jquery', 'wp-color-picker' ), 
+			array( 'jquery' ), 
 			$this->version, 
 			true 
 		);
-		wp_enqueue_script( 'wp-color-picker');
+		//wp_enqueue_script( 'wp-color-picker');
 
 	}
+
+    /********* TinyMCE Buttons ***********/
+        public function mixmat_tsw_buttons() {
+            if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
+                return;
+            }
+            add_filter( 'mce_buttons', 'mixmat_tsw_render_mixers' );
+            add_filter( 'mce_external_plugins', 'mixmat_tsw_add_mixers' );
+        }
 
     /**
      * Create settings field default args.
