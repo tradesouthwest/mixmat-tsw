@@ -115,12 +115,14 @@ class Mixmat_Tsw_Admin {
     public function editor_styles() {
         add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor.css' );
     }
+
 	/**
 	* Get a plugin options by its key (to be used in other plugin files).
 	* This schema saves all data as serialized data
+    *
 	* @since 1.0.0
+    * @param string $options The main serialized option set to this plugin.
 	*/
-
 	public function mixmat_tsw_option( $option ) {
 		$options = get_option( 'mixmat_tsw_options' );
 
@@ -146,18 +148,12 @@ class Mixmat_Tsw_Admin {
 		 * The Mixmat_Tsw_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
-		 *//*
-        wp_enqueue_style( $this->plugin_name .'-admin', 
-			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
-			array(), 
-			$this->version
-		); */
+		 */
         wp_enqueue_style( $this->plugin_name .'-admin', 
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
 			array(), 
 			$this->version 
 		); 
-		//wp_enqueue_style(  'wp-color-picker' );
 
 	}
 
@@ -181,21 +177,74 @@ class Mixmat_Tsw_Admin {
 		wp_enqueue_script( $this->plugin_name, 
 			plugin_dir_url( __FILE__ ) . 'js/mixmat-tsw-admin.js', 
 			array( 'jquery' ), 
-			$this->version, 
+			time(), 
 			true 
 		);
-		//wp_enqueue_script( 'wp-color-picker');
 
 	}
 
-    /********* TinyMCE Buttons ***********/
-        public function mixmat_tsw_buttons() {
-            if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
-                return;
-            }
-            add_filter( 'mce_buttons', 'mixmat_tsw_render_mixers' );
-            add_filter( 'mce_external_plugins', 'mixmat_tsw_add_mixers' );
+    /**
+	 * Register the tinymce buttons and addons
+	 *
+	 * @since    1.0.1
+     * TinyMCE Buttons
+	 */
+    public function mixmat_tsw_buttons() {
+        if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
+            return;
         }
+        add_filter( 'mce_buttons', 'mixmat_tsw_render_mixers' );
+        add_filter( 'mce_external_plugins', 'mixmat_tsw_add_mixers' );
+    }
+
+	/**
+     * Initialize the sections and their settings.
+     *
+     * @since    1.0.0
+     */
+    public function admin_init() {
+
+        register_setting( 'mixmat_tsw_options', 'mixmat_tsw_options', array( 
+                            &$this, 'validate_settings' ) );
+
+        foreach ( $this->sections as $slug => $title ) {
+            if ( $slug == 'general' ) {
+               add_settings_section( $slug, $title, array( 
+                                    &$this, 'display_general_section' ), 'mixmat-tsw-options' );
+            } elseif ( $slug == 'extra' ) {
+               add_settings_section( $slug, $title, array( 
+                                    &$this, 'display_extra_section' ), 'mixmat-tsw-options' );
+            } else {
+               add_settings_section( $slug, $title, array( 
+                                    &$this, 'display_section' ), 'mixmat-tsw-options' );
+            }
+        }
+
+        $this->get_settings();
+
+        foreach ( $this->settings as $id => $setting ) {
+            $setting['id'] = $id;
+            $this->create_setting( $setting );
+
+        }
+    }  
+	
+	/**
+     * Add the submenu page.
+     *
+     * @since    1.0.0
+     */
+    public function add_menu() {
+        add_menu_page(
+            __( 'mixmat tsw settings', $this->domain ),
+            __( 'MixMat TSW', $this->domain ),
+            'manage_options',
+            'mixmat-tsw-options',
+            array( $this, 'plugin_settings_page' ),
+            'dashicons-admin-settings',
+            61
+        );
+    }
 
     /**
      * Create settings field default args.
@@ -286,55 +335,6 @@ class Mixmat_Tsw_Admin {
     public function display_section() {
         // The default echos nothing for the description...
 	    echo '<p>To do</p>';
-    }
-	
-	/**
-     * Initialize the sections and their settings.
-     *
-     * @since    1.0.0
-     */
-    public function admin_init() {
-
-        register_setting( 'mixmat_tsw_options', 'mixmat_tsw_options', array( 
-                            &$this, 'validate_settings' ) );
-
-        foreach ( $this->sections as $slug => $title ) {
-            if ( $slug == 'general' ) {
-               add_settings_section( $slug, $title, array( 
-                                    &$this, 'display_general_section' ), 'mixmat-tsw-options' );
-            } elseif ( $slug == 'extra' ) {
-               add_settings_section( $slug, $title, array( 
-                                    &$this, 'display_extra_section' ), 'mixmat-tsw-options' );
-            } else {
-               add_settings_section( $slug, $title, array( 
-                                    &$this, 'display_section' ), 'mixmat-tsw-options' );
-            }
-        }
-
-        $this->get_settings();
-
-        foreach ( $this->settings as $id => $setting ) {
-            $setting['id'] = $id;
-            $this->create_setting( $setting );
-
-        }
-    }  
-	
-	/**
-     * Add the submenu page.
-     *
-     * @since    1.0.0
-     */
-    public function add_menu() {
-        add_menu_page(
-            __( 'mixmat tsw settings', $this->domain ),
-            __( 'MixMat TSW', $this->domain ),
-            'manage_options',
-            'mixmat-tsw-options',
-            array( $this, 'plugin_settings_page' ),
-            'dashicons-admin-settings',
-            61
-        );
     }
 
     /**
