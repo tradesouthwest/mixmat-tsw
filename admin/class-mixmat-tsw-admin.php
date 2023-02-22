@@ -113,7 +113,8 @@ class Mixmat_Tsw_Admin {
 	 * @since    1.0.1
 	 */
     public function editor_styles() {
-        add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor.css' );
+        add_theme_support( 'editor-styles' );
+        add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor-v1.css' );
     }
 
 	/**
@@ -153,6 +154,11 @@ class Mixmat_Tsw_Admin {
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
 			array(), 
 			$this->version 
+		); 
+        wp_enqueue_style( $this->plugin_name .'-theme-editor', 
+			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor.css', 
+			array(), 
+			time() 
 		); 
         
         $css_src = includes_url('css/') . 'editor.css';
