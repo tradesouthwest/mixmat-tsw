@@ -7,7 +7,7 @@ Tested up to: 5.9.3
 Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Plugin URI: http://themes.tradesouthwest.com/plugins/
+Plugin URI: https://plugins.classicpress-themes.com/
 
 Mixmat Page Mixer gives editors an easy way to sectionalize the posts and pages without knowing CSS or HTML.
 
