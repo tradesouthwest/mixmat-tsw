@@ -1,7 +1,5 @@
-(function( $ ) {
-	'use strict';
-$( document ).ready(function($) {
-
+/* mixmat script for columns in tinymce editor */
+window.addEventListener('DOMContentLoaded', (event) => {
     tinymce.PluginManager.add( 'column', function( editor, url ) {
         // Add Button to Visual Editor Toolbar
         editor.addButton('column', {
@@ -120,8 +118,5 @@ $( document ).ready(function($) {
             return;
         });
 	});
-
+console.log('DOM fully loaded and parsed');
 });
-
-
-})( jQuery );
