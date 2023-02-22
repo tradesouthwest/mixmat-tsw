@@ -154,6 +154,10 @@ class Mixmat_Tsw_Admin {
 			array(), 
 			$this->version 
 		); 
+        
+        $css_src = includes_url('css/') . 'editor.css';
+        wp_register_style('tinymce_css', $css_src);
+        wp_enqueue_style( 'tinymce_css' );
 
 	}
 
@@ -161,6 +165,7 @@ class Mixmat_Tsw_Admin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
+     * @see https://wordpress.stackexchange.com/questions/175307/tinymce-is-not-defined-when-not-using-wp-editor
 	 */
 	public function enqueue_scripts() {
 
@@ -180,6 +185,8 @@ class Mixmat_Tsw_Admin {
 			time(), 
 			true 
 		);
+        $js_src = includes_url('js/tinymce/') . 'tinymce.min.js';
+        wp_enqueue_script( 'tinymce_script_min', $js_src );
 
 	}
 
