@@ -11,7 +11,7 @@
  * Plugin Name:       MixMat TSW
  * Plugin URI:        https://http://themes.tradesouthwest.com/wordpress/plugins
  * Description:       Mixmat Page Mixer gives editors an easy way to sectionalize the posts and pages without knowing CSS or HTML.
- * Version:           1.0.0
+ * Version:           1.0.2
  * Author:            Tradesouthwest
  * Author URI:        https://tradesouthwest.com
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'MIXMAT_TSW_VERSION', '1.0.0' );
+define( 'MIXMAT_TSW_VERSION', '1.0.2' );
 
 /**
  * The code that runs during plugin activation.
