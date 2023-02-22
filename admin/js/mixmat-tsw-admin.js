@@ -1,5 +1,6 @@
 /* mixmat script for columns in tinymce editor */
 window.addEventListener('DOMContentLoaded', (event) => {
+
     tinymce.PluginManager.add( 'column', function( editor, url ) {
         // Add Button to Visual Editor Toolbar
         editor.addButton('column', {
@@ -89,7 +90,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // Add Button to Visual Editor Toolbar
         editor.addButton('columnsFour', {
             title: 'Insert 4 Columns',
-            cmd: 'columns4',
+            cmd: 'columnsFour',
             image: url + '/mxmtic-4.png',
         });
         editor.addCommand('columnsFour', function() {
@@ -118,5 +119,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         });
 	});
-console.log('DOM fully loaded and parsed');
+//console.log('DOM fully loaded and parsed');
 });
