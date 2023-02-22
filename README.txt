@@ -4,7 +4,7 @@ Donate link: https://paypal.me/tradesouthwest
 Tags: page builder, editor, ClassicPress, landing page, visual editor, wysiwyg, design, page builder, front-end builder, pages, post, css, layout, grid, responsive, html
 Requires at least: 4.5
 Tested up to: 5.9.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Plugin URI: http://themes.tradesouthwest.com/plugins/
@@ -42,3 +42,7 @@ your background colors to.
 n/a
 
 == Changelog == 
+1.0.2
+- enqueued tinymce scripts direct from includes folder
+- reved editor style
+- rmvd jquery in admin js
