@@ -97,17 +97,20 @@ function mixmat_render_mce_popup() {
         <div class="mxmt-tsw-mcepopup">
             <div class="mxmt-popup-wrap">
             <h4><?php esc_html_e('Mixmat PageMixer ','mixmat'); ?> <?php esc_html_e('Follow these steps please','mixmat'); ?></h4>
-                <h3>First</h3>
-                 <ul>
-                    <li>Select <strong>width</strong>  
-                    <img src="<?php echo esc_url( $imgurl .'mxmt-toolbar.png' ); ?>" />
-                    </li>
+                <h3><?php esc_html_e( 'First', 'mixmat-tsw' ); ?></h3>
+                <ul>
+                <li><?php esc_html_e('Set your cursor, inside of the editor, exactly where you want a section to display.','mixmat'); ?></li>
+                <li><?php esc_html_e( 'Be sure you are in the Visual editor tab when you do this step.', 'mixmat-tsw' ); ?></li>
                 </ul>
-                <h3>Then</h3>
-                <h3>Last Step</h3>
-                
-                <p><?php esc_html_e( 'Empty row .', 'mixmat' ); ?></p>
-                <p><?php esc_html_e( 'Copy/paste .', 'mixmat' ); ?></p>
+                <h3><?php esc_html_e( 'Then', 'mixmat-tsw' ); ?></h3>
+                <ul>
+                <li><?php esc_html_e('Select the icon for the column you want in that spot.','mixmat'); ?></li>
+                </ul>
+                <img src="<?php echo esc_url( $imgurl .'mxmt-toolbar.png' ); ?>" />
+                <h3><?php esc_html_e( 'Tips', 'mixmat-tsw' ); ?></h3>
+                <p><?php esc_html_e( 'To add lots of space between rows you can use the Single Column icon and do not add any content (empty row).', 'mixmat' ); ?></p>
+                <p><?php esc_html_e( 'You may need to toggle to Text editor tab in order to be sure all your work is clean and has not unneeded spaces or div tags.', 'mixmat' ); ?></p>
+                <p><?php esc_html_e( 'You can nest columns inside of other columns. Just be sure to not go too deep with nesting. Maybe two columns insed of a single half column would suffice.', 'mixmat-tsw' ); ?></p>
             </div>
 
         </div>
