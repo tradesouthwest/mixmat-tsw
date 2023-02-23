@@ -111,7 +111,8 @@ function mixmat_render_mce_popup() {
                 <img src="<?php echo esc_url( $imgurl .'mxmt-toolbar.png' ); ?>" />
                 <h3><?php esc_html_e( 'Tips', 'mixmat-tsw' ); ?></h3>
                 <p><?php esc_html_e( 'To add lots of space between rows you can use the Single Column icon and do not add any content (empty row).', 'mixmat' ); ?></p>
-                <p><?php esc_html_e( 'You may need to toggle to Text editor tab in order to be sure all your work is clean and has not unneeded spaces or div tags.', 'mixmat' ); ?></p>
+                <p><?php esc_html_e( 'You may need to toggle to Text editor tab in order to be sure all your work is clean and has no unneeded spaces or div tags.', 'mixmat' ); ?></p>
+                <img src="<?php echo esc_url( $imgurl .'mxmt-admin-activehtml.png' ); ?>" />
                 <p><?php esc_html_e( 'You can nest columns inside of other columns. Just be sure to not go too deep with nesting. Maybe two columns insed of a single half column would suffice.', 'mixmat-tsw' ); ?></p>
             </div>
 
