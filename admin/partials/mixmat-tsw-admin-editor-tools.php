@@ -105,6 +105,8 @@ function mixmat_render_mce_popup() {
                 <h3><?php esc_html_e( 'Then', 'mixmat-tsw' ); ?></h3>
                 <ul>
                 <li><?php esc_html_e('Select the icon for the column you want in that spot.','mixmat'); ?></li>
+                <li><?php esc_html_e('To add images or other content, simply Highlight the (sample) text and select an element to insert.','mixmat'); ?></li>
+                <li><?php esc_html_e( 'Borders in editor will not show on the front of your site. These just help sections stand out, visually.', 'mixmat-tsw' ); ?></li>
                 </ul>
                 <img src="<?php echo esc_url( $imgurl .'mxmt-toolbar.png' ); ?>" />
                 <h3><?php esc_html_e( 'Tips', 'mixmat-tsw' ); ?></h3>
