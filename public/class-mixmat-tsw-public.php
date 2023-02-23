@@ -49,8 +49,12 @@ class Mixmat_Tsw_Public {
 	 */
 	public function __construct( $plugin_name, $version ) {
 
-		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		if ( defined( 'MIXMAT_TSW_VERSION' ) ) {
+			$this->version = MIXMAT_TSW_VERSION;
+		} else {
+			$this->version = '1.0.0';
+		}
+		$this->plugin_name = 'mixmat-tsw';
 
 	}
 
@@ -74,7 +78,7 @@ class Mixmat_Tsw_Public {
 		wp_enqueue_style( $this->plugin_name .'-public', 
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-public.css', 
 			array(), 
-			$this->plugin_version, 
+			$this->version, 
 			'all' 
 		);
 
