@@ -81,7 +81,7 @@ class Mixmat_Tsw_Public {
 			$this->version, 
 			'all' 
 		);
-
+		
 	}
 
 	/**
@@ -102,6 +102,7 @@ class Mixmat_Tsw_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		$styles = $this->display_options_css();
 		/* color picker not used 
 		wp_enqueue_script( $this->plugin_name, 
 			plugin_dir_url( __FILE__ ) . 'js/mixmat-tsw-public.js', 
@@ -109,7 +110,9 @@ class Mixmat_Tsw_Public {
 			$this->version, 
 			false 
 		); */
-		return false;
+		wp_register_style( 'mixmat-tsw-entry-set', false );
+		wp_enqueue_style(   'mixmat-tsw-entry-set' );
+		wp_add_inline_style( 'mixmat-tsw-entry-set', $styles );
 	}
 
 	/**
@@ -120,10 +123,10 @@ class Mixmat_Tsw_Public {
 	*/
 	public function display_options_css() {
 		
-		$options   = get_option( 'mixmat_tsw_settings' );
-        $mxmtcolor = empty($options['mixmat_color_field_0']) ? '#fafafa' 
+		$options   = get_option( 'mixmat_tsw_options' );
+        $mxmtcolor = empty($options['mixmat_color_field_0']) ? '' 
                     : $options['mixmat_color_field_0'];
-        $mxmtshado = empty($options['mixmat_color_field_1']) ? '#cdcdcd' 
+        $mxmtshado = empty($options['mixmat_color_field_1']) ? '' 
                     : $options['mixmat_color_field_1'];
         $mxmtchk   = (empty($options['mixmat_theme_adjustment_option']) ) 
                       ? 0 : $options['mixmat_theme_adjustment_option'];
@@ -138,7 +141,6 @@ class Mixmat_Tsw_Public {
         else : 
         echo 'background: transparent;';
         endif; 
-        
         
         if( !empty ( $mxmtshado ) ) : 
         echo 'box-shadow: 0 1px 2px ' . $mxmtshado . ';';
@@ -160,8 +162,7 @@ class Mixmat_Tsw_Public {
         endif;
 
 		$styles = ob_get_clean();
-		wp_register_style( 'mixmat-tsw-entry-set', false );
-		wp_enqueue_style(   'mixmat-tsw-entry-set' );
-		wp_add_inline_style( 'mixmat-tsw-entry-set', $styles );
+		
+		return $styles;
 	}
 }
