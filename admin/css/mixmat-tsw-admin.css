@@ -10,6 +10,10 @@ button#content-html.wp-switch-editor.switch-html {
     border-right: 1px solid transparent;
     background: skyblue
 }
+.html-active .switch-html, .tmce-active #content-tmce.switch-tmce {
+background: beige;
+box-shadow: 0 3px 3px -3px yellowgreen;
+}
 .html-active .quicktags-toolbar{
     background:  skyblue 
 }
