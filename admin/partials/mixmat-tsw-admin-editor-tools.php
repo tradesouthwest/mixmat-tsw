@@ -106,10 +106,11 @@ function mixmat_render_mce_popup() {
                 <ul>
                 <li><?php esc_html_e('Select the icon for the column you want in that spot.','mixmat'); ?></li>
                 <li><?php esc_html_e('To add images or other content, simply Highlight the (sample) text and select an element to insert.','mixmat'); ?></li>
-                <li><?php esc_html_e( 'Borders in editor will not show on the front of your site. These just help sections stand out, visually.', 'mixmat-tsw' ); ?></li>
+                <li><strong><?php esc_html_e( 'Borders in editor will not show on the front of your site. These just help sections stand out, visually.', 'mixmat-tsw' ); ?></strong></li>
                 </ul>
                 <img src="<?php echo esc_url( $imgurl .'mxmt-toolbar.png' ); ?>" />
                 <h3><?php esc_html_e( 'Tips', 'mixmat-tsw' ); ?></h3>
+                <h4><?php esc_html_e( 'USE MOUSE TO SET CURSOR/CARAT POSITION ON PAGE... not keys please.', 'mixmat-tsw' ); ?></h4>
                 <p><?php esc_html_e( 'To add lots of space between rows you can use the Single Column icon and do not add any content (empty row).', 'mixmat' ); ?></p>
                 <p><?php esc_html_e( 'You may need to toggle to Text editor tab in order to be sure all your work is clean and has no unneeded spaces or div tags.', 'mixmat' ); ?></p>
                 <img src="<?php echo esc_url( $imgurl .'mxmt-admin-activehtml.png' ); ?>" />
