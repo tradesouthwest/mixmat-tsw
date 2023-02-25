@@ -114,7 +114,7 @@ class Mixmat_Tsw_Admin {
 	 */
     public function editor_styles() {
         add_theme_support( 'editor-styles' );
-        add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor-v1.css' );
+        add_editor_style( plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor.css' );
     }
 
 	/**
@@ -153,13 +153,13 @@ class Mixmat_Tsw_Admin {
         wp_enqueue_style( $this->plugin_name .'-admin', 
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-admin.css', 
 			array(), 
-			$this->version 
-		); 
+			time()
+		); /*
         wp_enqueue_style( $this->plugin_name .'-theme-editor', 
 			plugin_dir_url( __FILE__ ) . 'css/mixmat-tsw-theme-editor.css', 
 			array(), 
 			time() 
-		); 
+		); */
         
         $css_src = includes_url('css/') . 'editor.css';
         wp_register_style('tinymce_css', $css_src);
@@ -439,20 +439,19 @@ class Mixmat_Tsw_Admin {
         } elseif ( ! isset( $options[$id] ) ) {
             $options[$id] = 0;
         }
-
         $field_class = '';
-
         if ( $class != '' ) {
             $field_class = ' ' . $class;
         }
-
 		$css_id = '';
-
         if ( $cssid != '' ) {
             $css_id = ' ' . $cssid;
         }
+        $stdef = '';
+        if ( $std != '' ) {
+            $stdef = ' ' . $std;
+        }
         $steps = '';
-
         if ( $step != '' ) {
             $steps = ' ' . $step;
         }
@@ -509,7 +508,8 @@ class Mixmat_Tsw_Admin {
                 echo '<input class="wp-color-picker' . $field_class . '" type="color" 
                     id="' . $id . ' ' . $cssid . '" name="mixmat_tsw_options[' . $id . ']" 
                     value="' . esc_attr( $options[$id] ) . '" size="30">
-                    <span> ' . esc_attr( $options[$id] ) . '</span>';
+                    <span> ' . esc_attr( $options[$id] ) . '</span> 
+                    <small>default: </small><em> ' . esc_attr( $stdef ) . '</em>';
 
                 if ( $desc != '' ) {
                     echo '<p class="description">' . $desc . '</p>';
