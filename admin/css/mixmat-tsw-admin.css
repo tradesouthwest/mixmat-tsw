@@ -8,11 +8,16 @@ button#content-html.wp-switch-editor.switch-html {
     border-top: thin solid skyblue;
     border-left: thin solid transparent;
     border-right: 1px solid transparent;
+    border-bottom-color: transparent;
     background: skyblue
 }
 .html-active .switch-html, .tmce-active #content-tmce.switch-tmce {
 background: beige;
-box-shadow: 0 3px 3px -3px yellowgreen;
+box-shadow: -1px 9px 15px -4px rgba(20,20,20, .46);
+
+}
+.html-active .switch-html, .tmce-active .switch-tmce{
+border-bottom-color: transparent;
 }
 .html-active .quicktags-toolbar{
     background:  skyblue 
