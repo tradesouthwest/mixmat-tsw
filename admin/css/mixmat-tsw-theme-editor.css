@@ -10,6 +10,10 @@ height: .01%;
 color: transparent;
 visibility: hidden;
 }
+.mxmt-hr:after{
+    content: "&nbsp;";
+    display:block;
+}
 .mixmat-container {
     padding: 7px 0 0 0;
     margin: 0 auto 0 auto;
@@ -32,16 +36,29 @@ visibility: hidden;
 
 .mixmat_one_half,
 .mixmat_last_one_half{
-  width: 48%;
-  margin-right: 1%;
-  margin-left: 1%;
-  border: 1px solid #ccc;
+  width: 50%;
+  padding-right: 1%;
+  padding-left: 1%;
+  border-left: 1px solid #ccc;
 }
 .mixmat_one {
-    width: 98%;
-    margin-right: 1%;
-    margin-left: 1%;
+    width: 100%;
+    padding-right: 1%;
+    padding-left: 1%;
     border-bottom: 1px solid #ccc;
+}
+.mixmat_one_third,
+.mixmat_last_one_third{
+    width: 33.3333336%;
+    border-left: 1px solid #ccc;
+}
+.mixmat_one_third:nth-of-type(2n){
+    padding-left: .54444%;
+}
+.mixmat_one_fourth,
+.mixmat_last_one_fourth{
+    width: 25%;
+    border-left: 1px solid #ccc;
 }
 .mixmat_one_fourth, .mixmat_one_third, .mixmat_one_half, .mixmat_two_thirds, .mixmat_three_fourths, .mixmat_one {
     float: left;
