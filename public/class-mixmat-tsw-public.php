@@ -143,7 +143,7 @@ class Mixmat_Tsw_Public {
         endif; 
         
         if( !empty ( $mxmtshado ) ) : 
-        echo 'box-shadow: 0 0 1px 1px ' . $mxmtshado . ';';
+        echo 'box-shadow: 0 0 3px 1px ' . $mxmtshado . ';';
         else : 
         echo 'box-shadow: none;';
         endif; 
