@@ -13,7 +13,7 @@ Mixmat Page Mixer gives editors an easy way to sectionalize the posts and pages 
 
 == Description ==
 
-Mixmat Page Mixer gives editors an easy way to sectionalize the posts and pages without knowing CSS or HTML. The plugin comes with a set of shortcodes that you can copy into your Visual Editor while writting content and make your content stand out by creating boxes or sections that will separate each content section by one third, one fourth, one half or one of several other widths. Divisions are set up using a percentage layout system to gaurantee that your blog or website will show the pages perfectly on any device. Please note that this is not a mobile first plugin so do not expect miracles.
+Mixmat Page Mixer gives editors an easy way to sectionalize the posts and pages without knowing CSS or HTML. The plugin comes with a set of shortcodes that you can copy into your Visual Editor while writting content and make your content stand out by creating boxes or sections that will separate each content section by one third, one fourth, one half or one of several other widths. Divisions are set up using a percentage layout system to gaurantee that your blog or website will show the pages perfectly on any device.
 
 There is a background color picker built into the Mixmat Control Panel. This will set the background color universally and if you decide you want all the backgrounds the same; you can use you can style it through the Customizer CSS that comes with WP. The option to change background color is mostly for those who have themes with set backgrounds that may cause the text to be unreadable. Have fun and enjoy. New in version 1.0.2 is a box-shadow color selector.
 
